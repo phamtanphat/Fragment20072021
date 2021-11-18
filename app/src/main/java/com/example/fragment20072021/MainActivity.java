@@ -7,10 +7,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager mFragmentManager;
-    OnSendData onSendData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,17 +35,8 @@ public class MainActivity extends AppCompatActivity {
         // khi được trên xml
         IosFragment iosFragment = (IosFragment) mFragmentManager.findFragmentById(R.id.fragmentIos);
         if (iosFragment != null){
-            if (onSendData != null){
-                onSendData.onReceiveData("Hello Ios Fragment");
-            }
+            EventBus.getDefault().post("Hello Ios Fragment");
         }
     }
 
-    public void setSenData(OnSendData senData){
-        this.onSendData = senData;
-    }
-
-    interface OnSendData{
-        void onReceiveData(String data);
-    }
 }
