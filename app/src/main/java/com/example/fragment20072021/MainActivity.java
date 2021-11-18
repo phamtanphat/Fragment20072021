@@ -10,6 +10,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager mFragmentManager;
+    OnSendData onSendData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +31,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addIos(View view) {
+        // khi được trên xml
+        IosFragment iosFragment = (IosFragment) mFragmentManager.findFragmentById(R.id.fragmentIos);
+        if (iosFragment != null){
+            if (onSendData != null){
+                onSendData.onReceiveData("Hello Ios Fragment");
+            }
+        }
+    }
+
+    public void setSenData(OnSendData senData){
+        this.onSendData = senData;
+    }
+
+    interface OnSendData{
+        void onReceiveData(String data);
     }
 }

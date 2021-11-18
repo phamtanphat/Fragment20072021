@@ -79,5 +79,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonPopBackStack">
 
+        <fragment
+            tools:layout="@layout/fragment_ios"
+            android:name="com.example.fragment20072021.IosFragment"
+            android:id="@+id/fragmentIos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </RelativeLayout>
