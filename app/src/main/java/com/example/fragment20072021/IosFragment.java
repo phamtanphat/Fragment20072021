@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.fragment20072021.databinding.FragmentIosBinding;
 
 
-public class IosFragment extends Fragment {
+public class IosFragment extends Fragment implements MainActivity.OnSendData {
 
     FragmentIosBinding mBinding;
     @Override
@@ -19,6 +19,12 @@ public class IosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mBinding = FragmentIosBinding.inflate(inflater,container,false);
+        ((MainActivity)requireActivity()).setSenData(this);
         return mBinding.getRoot();
+    }
+
+    @Override
+    public void onReceiveData(String data) {
+        mBinding.textViewFragmentIos.setText(data);
     }
 }
