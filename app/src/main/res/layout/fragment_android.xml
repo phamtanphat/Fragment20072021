@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     android:background="#03A9F4"
     tools:context=".AndroidFragment">
 
@@ -13,5 +14,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fragment Android" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:hint="Input string"
+        android:id="@+id/edittextAndroid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonSendDataToMain"
+        android:layout_marginTop="10dp"
+        android:text="Send data to main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
