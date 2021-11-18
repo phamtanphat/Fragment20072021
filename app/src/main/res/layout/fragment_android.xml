@@ -9,6 +9,7 @@
     tools:context=".AndroidFragment">
 
     <TextView
+        android:id="@+id/textViewFragmentAndroid"
         android:textSize="40sp"
         android:textColor="#f20"
         android:layout_width="wrap_content"
